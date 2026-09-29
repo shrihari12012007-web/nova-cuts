@@ -2651,3 +2651,24 @@ button {
     padding: 16px;
   }
 }
+
+.demo-barber-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid var(--gold-border);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+.testimonials-badge-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}

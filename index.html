@@ -150,7 +150,7 @@
           <div class="hero-stat-item">
             <span class="stat-number">3</span>
             <div class="stat-rating">
-              <span class="stat-title">Professional Barbers</span>
+              <span class="stat-title">Featured Barbers</span>
               <span class="stat-label">Master Craftsmen Profiles</span>
             </div>
           </div>
@@ -430,7 +430,7 @@
               </div>
               <div class="about-stat-box">
                 <span class="about-stat-number counter" data-target="3">3</span>
-                <span class="about-stat-desc">Professional Barbers</span>
+                <span class="about-stat-desc">Featured Barbers</span>
               </div>
               <div class="about-stat-box">
                 <span class="about-stat-number">100%</span>
@@ -454,7 +454,7 @@
           <h2 class="section-title">Meet Our Barbers</h2>
           <div class="title-accent-line"></div>
           <p class="section-subtitle">
-            Masters of the blade and shears. Each Nova Cuts artisan concept brings years of dedicated craftsmanship, personalized artistry, and passion to every appointment.
+            Masters of the blade and shears. Each Nova Cuts artisan concept brings dedicated craftsmanship, personalized artistry, and passion to every appointment.
           </p>
         </div>
 
@@ -477,6 +477,7 @@
               </div>
             </div>
             <div class="barber-details">
+              <span class="demo-barber-tag">Featured fictional barber profile</span>
               <span class="barber-role">Master Barber</span>
               <h3 class="barber-name">Alex Morgan</h3>
               <p class="barber-bio">
@@ -511,6 +512,7 @@
               </div>
             </div>
             <div class="barber-details">
+              <span class="demo-barber-tag">Featured fictional barber profile</span>
               <span class="barber-role">Senior Barber</span>
               <h3 class="barber-name">Daniel Carter</h3>
               <p class="barber-bio">
@@ -545,6 +547,7 @@
               </div>
             </div>
             <div class="barber-details">
+              <span class="demo-barber-tag">Featured fictional barber profile</span>
               <span class="barber-role">Style Specialist</span>
               <h3 class="barber-name">Marcus Reed</h3>
               <p class="barber-bio">
@@ -725,9 +728,12 @@
     <section class="section testimonials-section" id="testimonials">
       <div class="container">
         <div class="section-header text-center reveal-on-scroll">
-          <p class="section-kicker">Client Endorsements</p>
+          <p class="section-kicker">Client Impressions</p>
           <h2 class="section-title">What Our Clients Say</h2>
           <div class="title-accent-line"></div>
+          <div class="testimonials-badge-wrap" style="margin-bottom: 16px;">
+            <span class="demo-badge">Sample Testimonials — Demo Content</span>
+          </div>
           <p class="section-subtitle">
             Sample client feedback demonstrating reputation built on consistency, precision, and an unmatched customer experience.
           </p>
@@ -747,7 +753,7 @@
               <div class="author-avatar">JV</div>
               <div class="author-info">
                 <h4 class="author-name">Julian Vance</h4>
-                <span class="author-tag">Tech Executive • Austin, TX</span>
+                <span class="author-tag">Sample Client Persona</span>
               </div>
             </div>
           </article>
@@ -765,7 +771,7 @@
               <div class="author-avatar">LH</div>
               <div class="author-info">
                 <h4 class="author-name">Liam Henderson</h4>
-                <span class="author-tag">Architect • Regular Client</span>
+                <span class="author-tag">Sample Client Persona</span>
               </div>
             </div>
           </article>
@@ -783,7 +789,7 @@
               <div class="author-avatar">DR</div>
               <div class="author-info">
                 <h4 class="author-name">David Reynolds</h4>
-                <span class="author-tag">Creative Director • Austin, TX</span>
+                <span class="author-tag">Sample Client Persona</span>
               </div>
             </div>
           </article>
@@ -792,7 +798,7 @@
     </section>
 
     <!-- ==================== APPOINTMENT / BOOKING SECTION ==================== -->
-    <section class="section booking-section" id="booking">
+    <section class="section booking-section" id="booking" tabindex="-1">
       <div class="container">
         <div class="booking-wrapper reveal-on-scroll">
           <!-- Left Visual Column -->
@@ -849,41 +855,41 @@
             <form id="appointmentForm" class="appointment-form" novalidate>
               <div class="form-grid">
                 <!-- Name Field -->
-                <div class="form-group">
+                <div class="form-group" id="group-fullName">
                   <label for="fullName">Full Name <span class="required">*</span></label>
                   <div class="input-with-icon">
-                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Alexander Sterling" required autocomplete="name">
+                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Alexander Sterling" required autocomplete="name" aria-required="true" aria-describedby="nameError" aria-invalid="false">
                     <span class="input-icon">👤</span>
                   </div>
-                  <small class="error-msg" id="nameError">Please enter your full name.</small>
+                  <small class="error-msg" id="nameError" role="alert">Please enter your full name.</small>
                 </div>
 
                 <!-- Email Field -->
-                <div class="form-group">
+                <div class="form-group" id="group-emailAddress">
                   <label for="emailAddress">Email Address <span class="required">*</span></label>
                   <div class="input-with-icon">
-                    <input type="email" id="emailAddress" name="emailAddress" placeholder="alexander@domain.com" required autocomplete="email">
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="alexander@domain.com" required autocomplete="email" aria-required="true" aria-describedby="emailError" aria-invalid="false">
                     <span class="input-icon">✉️</span>
                   </div>
-                  <small class="error-msg" id="emailError">Please enter a valid email address.</small>
+                  <small class="error-msg" id="emailError" role="alert">Please enter a valid email address.</small>
                 </div>
 
                 <!-- Phone Field -->
-                <div class="form-group">
+                <div class="form-group" id="group-phoneNumber">
                   <label for="phoneNumber">Phone Number <span class="required">*</span></label>
                   <div class="input-with-icon">
-                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 000-0000" required autocomplete="tel" aria-required="true" aria-describedby="phoneError" aria-invalid="false">
                     <span class="input-icon">📞</span>
                   </div>
-                  <small class="error-msg" id="phoneError">Please enter a valid phone number (10+ digits).</small>
+                  <small class="error-msg" id="phoneError" role="alert">Please enter a valid phone number.</small>
                 </div>
 
                 <!-- Service Selection -->
-                <div class="form-group">
+                <div class="form-group" id="group-selectService">
                   <label for="selectService">Select Service <span class="required">*</span></label>
                   <div class="input-with-icon select-wrapper">
-                    <select id="selectService" name="selectService" required>
-                      <option value="" disabled selected>Choose your service...</option>
+                    <select id="selectService" name="selectService" required aria-required="true" aria-describedby="serviceError" aria-invalid="false">
+                      <option value="" disabled selected>Select a service</option>
                       <option value="Classic Haircut">Classic Haircut — $25 (30 min)</option>
                       <option value="Premium Haircut">Premium Haircut — $35 (45 min)</option>
                       <option value="Beard Trim">Beard Trim — $20 (25 min)</option>
@@ -893,39 +899,40 @@
                     </select>
                     <span class="input-icon select-arrow">▼</span>
                   </div>
-                  <small class="error-msg" id="serviceError">Please select a service.</small>
+                  <small class="error-msg" id="serviceError" role="alert">Please select a service.</small>
                 </div>
 
                 <!-- Preferred Barber Selection -->
-                <div class="form-group">
-                  <label for="selectBarber">Preferred Barber</label>
+                <div class="form-group" id="group-selectBarber">
+                  <label for="selectBarber">Preferred Barber <span class="required">*</span></label>
                   <div class="input-with-icon select-wrapper">
-                    <select id="selectBarber" name="selectBarber">
-                      <option value="First Available Barber" selected>Any Available Barber (Quickest)</option>
+                    <select id="selectBarber" name="selectBarber" required aria-required="true" aria-describedby="barberError" aria-invalid="false">
+                      <option value="" disabled selected>Select a barber</option>
                       <option value="Alex Morgan">Alex Morgan — Master Barber</option>
                       <option value="Daniel Carter">Daniel Carter — Senior Barber</option>
                       <option value="Marcus Reed">Marcus Reed — Style Specialist</option>
                     </select>
                     <span class="input-icon select-arrow">▼</span>
                   </div>
+                  <small class="error-msg" id="barberError" role="alert">Please select a barber.</small>
                 </div>
 
                 <!-- Preferred Date -->
-                <div class="form-group">
+                <div class="form-group" id="group-bookingDate">
                   <label for="bookingDate">Preferred Date <span class="required">*</span></label>
                   <div class="input-with-icon">
-                    <input type="date" id="bookingDate" name="bookingDate" required>
+                    <input type="date" id="bookingDate" name="bookingDate" required aria-required="true" aria-describedby="dateError" aria-invalid="false">
                     <span class="input-icon">📅</span>
                   </div>
-                  <small class="error-msg" id="dateError">Please select a future date.</small>
+                  <small class="error-msg" id="dateError" role="alert">Please select an appointment date.</small>
                 </div>
 
                 <!-- Preferred Time -->
-                <div class="form-group">
+                <div class="form-group" id="group-bookingTime">
                   <label for="bookingTime">Preferred Time <span class="required">*</span></label>
                   <div class="input-with-icon select-wrapper">
-                    <select id="bookingTime" name="bookingTime" required>
-                      <option value="" disabled selected>Select a time slot...</option>
+                    <select id="bookingTime" name="bookingTime" required aria-required="true" aria-describedby="timeError" aria-invalid="false">
+                      <option value="" disabled selected>Select an appointment time</option>
                       <option value="09:00 AM">09:00 AM (Morning)</option>
                       <option value="10:00 AM">10:00 AM (Morning)</option>
                       <option value="11:30 AM">11:30 AM (Late Morning)</option>
@@ -937,7 +944,7 @@
                     </select>
                     <span class="input-icon select-arrow">▼</span>
                   </div>
-                  <small class="error-msg" id="timeError">Please select a time slot.</small>
+                  <small class="error-msg" id="timeError" role="alert">Please select an appointment time.</small>
                 </div>
               </div>
 
@@ -954,42 +961,42 @@
               </button>
             </form>
 
-            <!-- Dynamic Success Confirmation Box (Client-Ready Portfolio Output) -->
-            <div class="booking-success-box" id="bookingSuccessBox" style="display: none;" role="region" aria-live="polite">
+            <!-- Dynamic Success Confirmation Box (HIDDEN by default, populated purely on valid submit) -->
+            <div class="booking-success-box" id="bookingSuccessBox" style="display: none;" role="region" aria-live="polite" aria-labelledby="confirmationHeading">
               <div class="success-icon-ring">
                 <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-              <h3 class="success-title">Appointment Request Received</h3>
+              <h3 class="success-title" id="confirmationHeading">Appointment Request Received</h3>
               <p class="success-desc">
-                Thank you, <strong id="successClientName">Guest</strong>. Here is the summary of your requested demo booking:
+                Thank you, <strong id="successClientName"></strong>. Here is the summary of your requested demo booking:
               </p>
               
               <div class="confirmation-ticket">
                 <div class="ticket-row">
                   <span class="ticket-label">Name:</span>
-                  <span class="ticket-val" id="successClientNameDisplay">Alexander Sterling</span>
+                  <span class="ticket-val" id="successClientNameDisplay"></span>
                 </div>
                 <div class="ticket-row">
                   <span class="ticket-label">Service:</span>
-                  <span class="ticket-val" id="successService">Classic Haircut</span>
+                  <span class="ticket-val" id="successService"></span>
                 </div>
                 <div class="ticket-row">
                   <span class="ticket-label">Barber:</span>
-                  <span class="ticket-val" id="successBarber">Alex Morgan</span>
+                  <span class="ticket-val" id="successBarber"></span>
                 </div>
                 <div class="ticket-row">
                   <span class="ticket-label">Date:</span>
-                  <span class="ticket-val" id="successDate">Nov 14, 2026</span>
+                  <span class="ticket-val" id="successDate"></span>
                 </div>
                 <div class="ticket-row">
                   <span class="ticket-label">Time:</span>
-                  <span class="ticket-val" id="successTime">11:30 AM</span>
+                  <span class="ticket-val" id="successTime"></span>
                 </div>
                 <div class="ticket-row">
-                  <span class="ticket-label">Demo Reference:</span>
-                  <span class="ticket-val gold-text" id="successRefCode">#NC-DEMO-8492</span>
+                  <span class="ticket-label">Reference:</span>
+                  <span class="ticket-val gold-text" id="successRefCode"></span>
                 </div>
               </div>
 
@@ -1179,15 +1186,15 @@
               <!-- Map Header Badge -->
               <div class="map-top-bar">
                 <span class="map-badge-kicker">LOCATION MAP — DEMO</span>
-                <span class="map-coordinates">30.2672° N, 97.7431° W</span>
+                <span class="map-coordinates">Austin, Texas — Fictional Location</span>
               </div>
 
               <!-- Map Overlay Info Badge -->
               <div class="map-overlay-badge">
                 <span class="pin-pulse"></span>
                 <div>
-                  <strong>NOVA CUTS (Demo Location)</strong>
-                  <p>123 Example Street, Austin, Texas</p>
+                  <strong>NOVA CUTS (Demo Concept)</strong>
+                  <p>Austin, Texas — Fictional Location</p>
                 </div>
               </div>
             </div>
@@ -1203,7 +1210,7 @@
       <!-- Subtle Demo Label Banner -->
       <div class="footer-demo-callout">
         <span class="demo-badge">DEMO WEBSITE — CONCEPT DESIGN</span>
-        <p class="footer-demo-subtext">Nova Cuts is a fictional concept created for portfolio demonstration purposes.</p>
+        <p class="footer-demo-subtext">NOVA CUTS is a fictional concept website created for portfolio demonstration purposes.</p>
       </div>
 
       <div class="footer-top-grid">
@@ -1274,7 +1281,7 @@
 
       <div class="footer-bottom">
         <p class="copyright">© 2026 Nova Cuts. All rights reserved.</p>
-        <p class="footer-disclaimer">Nova Cuts is a fictional concept created for portfolio demonstration purposes.</p>
+        <p class="footer-disclaimer">NOVA CUTS is a fictional concept website created for portfolio demonstration purposes.</p>
       </div>
     </div>
   </footer>

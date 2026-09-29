@@ -24,9 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('appointmentForm');
   const bookingSuccessBox = document.getElementById('bookingSuccessBox');
   const resetBookingBtn = document.getElementById('resetBookingBtn');
+  const nameInput = document.getElementById('fullName');
+  const emailInput = document.getElementById('emailAddress');
+  const phoneInput = document.getElementById('phoneNumber');
   const selectServiceInput = document.getElementById('selectService');
   const selectBarberInput = document.getElementById('selectBarber');
   const bookingDateInput = document.getElementById('bookingDate');
+  const bookingTimeInput = document.getElementById('bookingTime');
   const submitBookingBtn = document.getElementById('submitBookingBtn');
 
   // Service & Barber CTA Triggers
@@ -291,13 +295,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const serviceName = btn.getAttribute('data-service');
       if (serviceName && selectServiceInput) {
         selectServiceInput.value = serviceName;
-        selectServiceInput.dispatchEvent(new Event('change'));
+        clearError(selectServiceInput);
       }
       scrollToBooking();
-      // Highlight the booking card
       const formCard = document.querySelector('.booking-form-card');
-      formCard.style.outline = '2px solid var(--gold-primary)';
-      setTimeout(() => { formCard.style.outline = 'none'; }, 1500);
+      if (formCard) {
+        formCard.style.outline = '2px solid var(--gold-primary)';
+        setTimeout(() => { formCard.style.outline = 'none'; }, 1500);
+      }
     });
   });
 
@@ -308,152 +313,243 @@ document.addEventListener('DOMContentLoaded', () => {
       const barberName = btn.getAttribute('data-barber');
       if (barberName && selectBarberInput) {
         selectBarberInput.value = barberName;
+        clearError(selectBarberInput);
       }
       scrollToBooking();
       const formCard = document.querySelector('.booking-form-card');
-      formCard.style.outline = '2px solid var(--gold-primary)';
-      setTimeout(() => { formCard.style.outline = 'none'; }, 1500);
+      if (formCard) {
+        formCard.style.outline = '2px solid var(--gold-primary)';
+        setTimeout(() => { formCard.style.outline = 'none'; }, 1500);
+      }
     });
   });
 
   // Dynamically set minimum date to today so past dates cannot be chosen
   if (bookingDateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    bookingDateInput.min = today;
-    // Set default date to today
-    bookingDateInput.value = today;
+    const todayStr = new Date().toISOString().split('T')[0];
+    bookingDateInput.min = todayStr;
+    // Form is empty by default on initial page load
+    bookingDateInput.value = '';
   }
 
   // =========================================================================
-  // 9. FORM VALIDATION & DYNAMIC DEMO APPOINTMENT CONFIRMATION
+  // 9. APPOINTMENT FORM — EXACT VALIDATION BEHAVIOR
   // =========================================================================
-  const nameInput = document.getElementById('fullName');
-  const emailInput = document.getElementById('emailAddress');
-  const phoneInput = document.getElementById('phoneNumber');
-  const timeInput = document.getElementById('bookingTime');
+  
+  // Helper to display accessible error
+  const showError = (field, message) => {
+    const group = field.closest('.form-group');
+    if (!group) return;
+    group.classList.add('has-error');
+    field.setAttribute('aria-invalid', 'true');
+    const errEl = group.querySelector('.error-msg');
+    if (errEl) {
+      errEl.textContent = message;
+      errEl.style.display = 'block';
+    }
+  };
 
-  // Validation rules
+  // Helper to clear error
+  const clearError = (field) => {
+    const group = field.closest('.form-group');
+    if (!group) return;
+    group.classList.remove('has-error');
+    field.setAttribute('aria-invalid', 'false');
+    const errEl = group.querySelector('.error-msg');
+    if (errEl) {
+      errEl.style.display = 'none';
+    }
+  };
+
+  // 1. Full Name Validation
+  // Required, trimmed. Invalid if empty, only spaces, <2 chars, or contains ONLY numbers.
   const validateName = () => {
     const val = nameInput.value.trim();
-    const parent = nameInput.closest('.form-group');
-    if (val.length < 2) {
-      parent.classList.add('has-error');
+    if (!val || val.length < 2 || /^\d+$/.test(val)) {
+      showError(nameInput, 'Please enter your full name.');
       return false;
     }
-    parent.classList.remove('has-error');
+    clearError(nameInput);
     return true;
   };
 
+  // 2. Email Validation
+  // Required, trimmed. Practical email-format regex.
   const validateEmail = () => {
     const val = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const parent = emailInput.closest('.form-group');
-    if (!emailRegex.test(val)) {
-      parent.classList.add('has-error');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+    if (!val || !emailRegex.test(val)) {
+      showError(emailInput, 'Please enter a valid email address.');
       return false;
     }
-    parent.classList.remove('has-error');
+    clearError(emailInput);
     return true;
   };
 
+  // 3. Phone Validation
+  // Required. Allow digits, spaces, +, -, parentheses. Digits only: min 7, max 15.
   const validatePhone = () => {
-    const val = phoneInput.value.trim().replace(/[\s\-\(\)\.]/g, '');
-    const parent = phoneInput.closest('.form-group');
-    // Ensure at least 10 numeric characters
-    if (val.length < 10 || !/^\+?\d+$/.test(val)) {
-      parent.classList.add('has-error');
+    const rawVal = phoneInput.value.trim();
+    if (!rawVal) {
+      showError(phoneInput, 'Please enter a valid phone number.');
       return false;
     }
-    parent.classList.remove('has-error');
+    // Must contain only allowed phone characters
+    if (!/^[0-9+\s\-()]+$/.test(rawVal)) {
+      showError(phoneInput, 'Please enter a valid phone number.');
+      return false;
+    }
+    const digitsOnly = rawVal.replace(/\D/g, '');
+    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+      showError(phoneInput, 'Please enter a valid phone number.');
+      return false;
+    }
+    clearError(phoneInput);
     return true;
   };
 
+  // 4. Service Validation
+  // Required. Default option has empty value.
   const validateService = () => {
-    const parent = selectServiceInput.closest('.form-group');
-    if (!selectServiceInput.value) {
-      parent.classList.add('has-error');
+    const val = selectServiceInput.value;
+    if (!val) {
+      showError(selectServiceInput, 'Please select a service.');
       return false;
     }
-    parent.classList.remove('has-error');
+    clearError(selectServiceInput);
     return true;
   };
 
+  // 5. Barber Validation
+  // Required. Default option has empty value.
+  const validateBarber = () => {
+    const val = selectBarberInput.value;
+    if (!val) {
+      showError(selectBarberInput, 'Please select a barber.');
+      return false;
+    }
+    clearError(selectBarberInput);
+    return true;
+  };
+
+  // 6. Date Validation
+  // Required. Must not be empty, must not be before today.
   const validateDate = () => {
-    const parent = bookingDateInput.closest('.form-group');
     const val = bookingDateInput.value;
     if (!val) {
-      parent.classList.add('has-error');
+      showError(bookingDateInput, 'Please select an appointment date.');
       return false;
     }
     const todayStr = new Date().toISOString().split('T')[0];
     if (val < todayStr) {
-      parent.classList.add('has-error');
+      showError(bookingDateInput, 'Please select today or a future date.');
       return false;
     }
-    parent.classList.remove('has-error');
+    clearError(bookingDateInput);
     return true;
   };
 
+  // 7. Time Validation
+  // Required. Default option has empty value.
   const validateTime = () => {
-    const parent = timeInput.closest('.form-group');
-    if (!timeInput.value) {
-      parent.classList.add('has-error');
+    const val = bookingTimeInput.value;
+    if (!val) {
+      showError(bookingTimeInput, 'Please select an appointment time.');
       return false;
     }
-    parent.classList.remove('has-error');
+    clearError(bookingTimeInput);
     return true;
   };
 
-  // Real-time blur validation
-  nameInput.addEventListener('blur', validateName);
-  emailInput.addEventListener('blur', validateEmail);
-  phoneInput.addEventListener('blur', validatePhone);
-  selectServiceInput.addEventListener('change', validateService);
-  bookingDateInput.addEventListener('change', validateDate);
-  timeInput.addEventListener('change', validateTime);
-
-  // Clear errors on input
-  [nameInput, emailInput, phoneInput].forEach(inp => {
-    inp.addEventListener('input', () => {
-      inp.closest('.form-group').classList.remove('has-error');
-    });
+  // Live Error Removal: remove error as soon as user types or changes value to valid
+  nameInput.addEventListener('input', () => {
+    if (nameInput.closest('.form-group').classList.contains('has-error')) {
+      validateName();
+    }
   });
 
-  // Handle Form Submit
+  emailInput.addEventListener('input', () => {
+    if (emailInput.closest('.form-group').classList.contains('has-error')) {
+      validateEmail();
+    }
+  });
+
+  phoneInput.addEventListener('input', () => {
+    if (phoneInput.closest('.form-group').classList.contains('has-error')) {
+      validatePhone();
+    }
+  });
+
+  selectServiceInput.addEventListener('change', () => {
+    if (selectServiceInput.closest('.form-group').classList.contains('has-error')) {
+      validateService();
+    }
+  });
+
+  selectBarberInput.addEventListener('change', () => {
+    if (selectBarberInput.closest('.form-group').classList.contains('has-error')) {
+      validateBarber();
+    }
+  });
+
+  bookingDateInput.addEventListener('change', () => {
+    if (bookingDateInput.closest('.form-group').classList.contains('has-error')) {
+      validateDate();
+    }
+  });
+
+  bookingTimeInput.addEventListener('change', () => {
+    if (bookingTimeInput.closest('.form-group').classList.contains('has-error')) {
+      validateTime();
+    }
+  });
+
+  // Handle Form Submission
   bookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // Validate every field
     const isNameValid = validateName();
     const isEmailValid = validateEmail();
     const isPhoneValid = validatePhone();
     const isServiceValid = validateService();
+    const isBarberValid = validateBarber();
     const isDateValid = validateDate();
     const isTimeValid = validateTime();
 
-    if (!isNameValid || !isEmailValid || !isPhoneValid || !isServiceValid || !isDateValid || !isTimeValid) {
-      // Focus the first invalid field
-      const firstError = bookingForm.querySelector('.has-error input, .has-error select');
-      if (firstError) firstError.focus();
-      return;
+    if (!isNameValid || !isEmailValid || !isPhoneValid || !isServiceValid || !isBarberValid || !isDateValid || !isTimeValid) {
+      // Find the first invalid field
+      const firstInvalidGroup = bookingForm.querySelector('.form-group.has-error');
+      if (firstInvalidGroup) {
+        firstInvalidGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const firstInput = firstInvalidGroup.querySelector('input, select');
+        if (firstInput) {
+          firstInput.focus();
+        }
+      }
+      return; // Do NOT submit, do NOT show confirmation, keep user values
     }
 
-    // Set Loading State
-    submitBookingBtn.classList.add('loading');
+    // Success Behavior
     submitBookingBtn.disabled = true;
+    const btnTextSpan = submitBookingBtn.querySelector('.btn-text');
+    if (btnTextSpan) {
+      btnTextSpan.textContent = 'PROCESSING...';
+    } else {
+      submitBookingBtn.textContent = 'PROCESSING...';
+    }
+    submitBookingBtn.classList.add('loading');
 
-    // Simulate realistic front-end demo processing delay
+    // Wait approximately 500–800ms (650ms)
     setTimeout(() => {
-      submitBookingBtn.classList.remove('loading');
-      submitBookingBtn.disabled = false;
-
-      // Extract exact user-entered details dynamically
+      // Extract exact user-entered details before any reset
       const clientName = nameInput.value.trim();
       const serviceChosen = selectServiceInput.value;
-      const barberChosen = selectBarberInput.value || 'First Available Barber';
+      const barberChosen = selectBarberInput.value;
       const rawDate = bookingDateInput.value;
-      const timeChosen = timeInput.value;
+      const timeChosen = bookingTimeInput.value;
 
-      // Format date dynamically based on user selection
+      // Format date nicely (e.g., Saturday, Oct 12, 2026)
       let formattedDate = rawDate;
       try {
         const parts = rawDate.split('-');
@@ -468,10 +564,11 @@ document.addEventListener('DOMContentLoaded', () => {
         formattedDate = rawDate;
       }
 
-      // Generate random demo reference code
-      const randomCode = `#NC-DEMO-${Math.floor(1000 + Math.random() * 9000)}`;
+      // Generate unique demo reference ID in format NC-DEMO-XXXX
+      const random4Digit = Math.floor(1000 + Math.random() * 9000);
+      const referenceId = `NC-DEMO-${random4Digit}`;
 
-      // Populate confirmation card dynamically with exact entered info
+      // Dynamically populate confirmation card with exact entered values
       const clientNameEl = document.getElementById('successClientName');
       const clientNameDisplayEl = document.getElementById('successClientNameDisplay');
       const serviceEl = document.getElementById('successService');
@@ -486,26 +583,58 @@ document.addEventListener('DOMContentLoaded', () => {
       if (barberEl) barberEl.textContent = barberChosen;
       if (dateEl) dateEl.textContent = formattedDate;
       if (timeEl) timeEl.textContent = timeChosen;
-      if (refCodeEl) refCodeEl.textContent = randomCode;
+      if (refCodeEl) refCodeEl.textContent = referenceId;
 
-      // Clear the form fields after confirmation has recorded the values
-      bookingForm.reset();
-      const todayStr = new Date().toISOString().split('T')[0];
-      bookingDateInput.value = todayStr;
+      // Restore button text and state
+      submitBookingBtn.disabled = false;
+      submitBookingBtn.classList.remove('loading');
+      if (btnTextSpan) {
+        btnTextSpan.textContent = 'BOOK MY APPOINTMENT';
+      }
 
-      // Swap Form with Confirmation Card
+      // Show confirmation and hide form
       bookingForm.style.display = 'none';
       bookingSuccessBox.style.display = 'block';
 
-      // Scroll smoothly to confirmation view
+      // Move focus into the confirmation view
       bookingSuccessBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (resetBookingBtn) {
+        resetBookingBtn.focus();
+      }
     }, 650);
   });
 
-  // CLOSE / Reset Confirmation Card
+  // CONFIRMATION CLOSE BUTTON
   resetBookingBtn.addEventListener('click', () => {
+    // Hide confirmation and show form
     bookingSuccessBox.style.display = 'none';
     bookingForm.style.display = 'block';
+
+    // Reset form to clean default state
+    bookingForm.reset();
+    if (bookingDateInput) {
+      const todayStr = new Date().toISOString().split('T')[0];
+      bookingDateInput.min = todayStr;
+      bookingDateInput.value = '';
+    }
+
+    // Clear any lingering error classes
+    bookingForm.querySelectorAll('.form-group').forEach(group => {
+      group.classList.remove('has-error');
+      const input = group.querySelector('input, select');
+      if (input) input.setAttribute('aria-invalid', 'false');
+      const err = group.querySelector('.error-msg');
+      if (err) err.style.display = 'none';
+    });
+
+    // Return focus to appointment section
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.focus();
+    }
+    if (nameInput) {
+      nameInput.focus();
+    }
   });
 
   // =========================================================================

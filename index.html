@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA CUTS — Sharp Cuts. Clean Style. | Premium Modern Barbershop</title>
+  <meta name="description" content="Nova Cuts is Austin's premier modern barbershop. Offering handcrafted fades, beard grooming, hot towel treatments, and luxury executive cuts for men who expect more.">
+  <meta name="keywords" content="barbershop, luxury haircut, Austin barber, beard trim, executive grooming, Nova Cuts">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c5a059' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='6' cy='6' r='3'/><circle cx='6' cy='18' r='3'/><line x1='20' y1='4' x2='8.12' y2='15.88'/><line x1='14.47' y1='14.48' x2='20' y2='20'/><line x1='8.12' y1='8.12' x2='12' y2='12'/></svg>">
+
+  <!-- Google Fonts: Cinzel for high-end luxury headings, Plus Jakarta Sans for ultra-clean body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="header" id="navbar">
+    <div class="container header-container">
+      <a href="#home" class="brand-logo" aria-label="Nova Cuts Home">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="6" cy="6" r="3"></circle>
+            <circle cx="6" cy="18" r="3"></circle>
+            <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+            <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+            <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+          </svg>
+        </span>
+        <span class="logo-text">NOVA <span>CUTS</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#barbers" class="nav-link">Barbers</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#booking" class="btn btn-sm btn-gold nav-cta-btn">Book Chair</a>
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-text">NOVA <span>CUTS</span></span>
+      </div>
+      <button class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-nav-link">Home</a></li>
+      <li><a href="#services" class="mobile-nav-link">Services</a></li>
+      <li><a href="#barbers" class="mobile-nav-link">Barbers</a></li>
+      <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="#booking" class="btn btn-gold btn-block mobile-drawer-cta">Book An Appointment</a>
+      <div class="drawer-contact-info">
+        <p class="drawer-phone">+1 (555) 123-4567</p>
+        <p class="drawer-address">123 Main Street, Austin, TX</p>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-bg-media">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" 
+             alt="Nova Cuts luxury barbershop interior and leather barber chairs" 
+             class="hero-bg-img"
+             fetchpriority="high">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Austin’s Premier Grooming Lounge
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-brand">NOVA CUTS</span>
+          <span class="hero-tagline">Sharp Cuts. <span class="gold-gradient-text">Clean Style.</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          "Premium grooming for men who expect more."
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#booking" class="btn btn-gold hero-btn">
+            <span>Book An Appointment</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#services" class="btn btn-outline hero-btn">
+            <span>View Services</span>
+          </a>
+        </div>
+
+        <!-- Hero Bottom Trust Badges -->
+        <div class="hero-stats-bar">
+          <div class="hero-stat-item">
+            <span class="stat-number">4.9 / 5</span>
+            <div class="stat-rating">
+              <span class="stars">★★★★★</span>
+              <span class="stat-label">500+ Verified Reviews</span>
+            </div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat-item">
+            <span class="stat-number">10+</span>
+            <div class="stat-rating">
+              <span class="stat-title">Master Craftsmen</span>
+              <span class="stat-label">Traditional Hot Lather &amp; Razor</span>
+            </div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat-item">
+            <span class="stat-number">100%</span>
+            <div class="stat-rating">
+              <span class="stat-title">Precision Guarantee</span>
+              <span class="stat-label">Bespoke Style Consultation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#services" class="hero-scroll-indicator" aria-label="Scroll down to services">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <p class="section-kicker">Signature Menu</p>
+          <h2 class="section-title">Our Services</h2>
+          <div class="title-accent-line"></div>
+          <p class="section-subtitle">
+            Every service includes a tailored consultation, precision cutting techniques, hot lather neck shave, and premium finishing products.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <article class="service-card reveal-on-scroll" data-service-name="Classic Haircut">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                  <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                  <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <span class="service-duration">30 Min</span>
+            </div>
+            <div class="service-info">
+              <div class="service-header-row">
+                <h3 class="service-name">Classic Haircut</h3>
+                <span class="service-price">$25</span>
+              </div>
+              <p class="service-desc">
+                Precision scissor and clipper work tailored to your head shape, followed by a straight-razor nape clean-up and styling.
+              </p>
+              <ul class="service-features">
+                <li>Personalized consultation</li>
+                <li>Precision scissor &amp; clipper cut</li>
+                <li>Hot lather straight-razor neck clean</li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <button class="btn btn-outline-gold btn-block book-service-btn" data-service="Classic Haircut">
+                Book Now
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 2 (Featured) -->
+          <article class="service-card featured-service reveal-on-scroll" data-service-name="Premium Haircut">
+            <div class="featured-badge">Most Popular</div>
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <span class="service-duration">45 Min</span>
+            </div>
+            <div class="service-info">
+              <div class="service-header-row">
+                <h3 class="service-name">Premium Haircut</h3>
+                <span class="service-price">$35</span>
+              </div>
+              <p class="service-desc">
+                Complete grooming luxury featuring clarifying shampoo, invigorating scalp massage, tailored cut, warm herbal towel, and bespoke finish.
+              </p>
+              <ul class="service-features">
+                <li>Tea tree shampoo &amp; conditioning</li>
+                <li>Invigorating tension-relief scalp massage</li>
+                <li>Razor edge styling &amp; matte clay finish</li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <button class="btn btn-gold btn-block book-service-btn" data-service="Premium Haircut">
+                Book Now
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="service-card reveal-on-scroll" data-service-name="Beard Trim">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 7c0 4.97 3.58 9 8 9s8-4.03 8-9"></path>
+                  <path d="M8 3v4"></path>
+                  <path d="M16 3v4"></path>
+                  <path d="M12 16v5"></path>
+                </svg>
+              </div>
+              <span class="service-duration">25 Min</span>
+            </div>
+            <div class="service-info">
+              <div class="service-header-row">
+                <h3 class="service-name">Beard Trim</h3>
+                <span class="service-price">$20</span>
+              </div>
+              <p class="service-desc">
+                Architectural beard sculpting, length reduction, straight-razor cheek &amp; neckline contouring, and hot organic beard elixir treatment.
+              </p>
+              <ul class="service-features">
+                <li>Shape sculpting to face geometry</li>
+                <li>Straight razor cheek &amp; throat contour</li>
+                <li>Nourishing cedar &amp; jojoba oil massage</li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <button class="btn btn-outline-gold btn-block book-service-btn" data-service="Beard Trim">
+                Book Now
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="service-card reveal-on-scroll" data-service-name="Haircut + Beard">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <span class="service-duration">55 Min</span>
+            </div>
+            <div class="service-info">
+              <div class="service-header-row">
+                <h3 class="service-name">Haircut + Beard</h3>
+                <span class="service-price">$50</span>
+              </div>
+              <p class="service-desc">
+                Our signature combo. Seamless fade transition from temple to beard, full razor line sculpting, aromatic hot towel, and styling.
+              </p>
+              <ul class="service-features">
+                <li>Complete custom cut of your choice</li>
+                <li>Detailed beard architecture &amp; blend</li>
+                <li>Dual hot towel compression &amp; balm finish</li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <button class="btn btn-outline-gold btn-block book-service-btn" data-service="Haircut + Beard">
+                Book Now
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 5 (Executive) -->
+          <article class="service-card reveal-on-scroll" data-service-name="Executive Grooming">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <span class="service-duration">75 Min</span>
+            </div>
+            <div class="service-info">
+              <div class="service-header-row">
+                <h3 class="service-name">Executive Grooming</h3>
+                <span class="service-price">$65</span>
+              </div>
+              <p class="service-desc">
+                The ultimate gentleman's ritual: haircut, beard sculpting, eucalyptus steam towel treatment, mini purifying facial, and artisan beverage.
+              </p>
+              <ul class="service-features">
+                <li>Master haircut &amp; straight-razor shave</li>
+                <li>Eucalyptus steam &amp; clay purifying facial</li>
+                <li>Complimentary single malt or cold brew</li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <button class="btn btn-outline-gold btn-block book-service-btn" data-service="Executive Grooming">
+                Book Now
+              </button>
+            </div>
+          </article>
+
+          <!-- Service Card 6 -->
+          <article class="service-card reveal-on-scroll" data-service-name="Kids Haircut">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <span class="service-duration">30 Min</span>
+            </div>
+            <div class="service-info">
+              <div class="service-header-row">
+                <h3 class="service-name">Kids Haircut</h3>
+                <span class="service-price">$20</span>
+              </div>
+              <p class="service-desc">
+                Patient, precision modern cut for young gentlemen under 12. Gentle styling, clean edges, and confidence-boosting results.
+              </p>
+              <ul class="service-features">
+                <li>Ages 12 and under</li>
+                <li>Patient, friendly master barber approach</li>
+                <li>Complimentary styling &amp; lollipop</li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <button class="btn btn-outline-gold btn-block book-service-btn" data-service="Kids Haircut">
+                Book Now
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Image Column -->
+          <div class="about-image-wrapper reveal-on-scroll">
+            <div class="about-image-card">
+              <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" 
+                   alt="Master barber crafting a precision haircut at Nova Cuts" 
+                   loading="lazy">
+              <div class="about-card-badge">
+                <span class="badge-num">100%</span>
+                <span class="badge-text">Handcrafted Precision</span>
+              </div>
+            </div>
+            <div class="about-accent-frame"></div>
+          </div>
+
+          <!-- Story Column -->
+          <div class="about-content reveal-on-scroll">
+            <p class="section-kicker">Heritage &amp; Craft</p>
+            <h2 class="section-title">More Than A Haircut</h2>
+            <div class="title-accent-line align-left"></div>
+            
+            <p class="about-lead">
+              At Nova Cuts, we believe grooming is an essential ritual of the modern gentleman—a moment of pause, self-respect, and quiet confidence.
+            </p>
+            <p class="about-body">
+              Founded on the belief that classic barbering tradition should seamlessly integrate with modern, sharp aesthetics, Nova Cuts creates a bespoke experience from the moment you step through our doors. We blend old-world hot lather shaving, straight-razor contouring, and scalp therapies with progressive scissor work and architectural fades.
+            </p>
+            <p class="about-body">
+              Whether you’re stepping into the boardroom, celebrating life’s milestones, or simply elevating your everyday silhouette, our chairs offer uncompromised attention to every single detail.
+            </p>
+
+            <!-- Statistics Grid -->
+            <div class="about-stats-grid">
+              <div class="about-stat-box">
+                <span class="about-stat-number counter" data-target="10">10+</span>
+                <span class="about-stat-desc">Years Experience</span>
+              </div>
+              <div class="about-stat-box">
+                <span class="about-stat-number counter" data-target="5000">5K+</span>
+                <span class="about-stat-desc">Happy Clients</span>
+              </div>
+              <div class="about-stat-box">
+                <span class="about-stat-number">4.9/5</span>
+                <span class="about-stat-desc">Average Rating</span>
+              </div>
+            </div>
+
+            <div class="about-cta-row">
+              <a href="#booking" class="btn btn-gold">Experience Nova Cuts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BARBERS SECTION ==================== -->
+    <section class="section barbers-section" id="barbers">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <p class="section-kicker">The Craftsmen</p>
+          <h2 class="section-title">Meet Our Barbers</h2>
+          <div class="title-accent-line"></div>
+          <p class="section-subtitle">
+            Masters of the blade and shears. Each Nova Cuts artisan brings years of dedicated craftsmanship, personalized artistry, and passion to every appointment.
+          </p>
+        </div>
+
+        <div class="barbers-grid">
+          <!-- Barber 1 -->
+          <article class="barber-card reveal-on-scroll">
+            <div class="barber-image-container">
+              <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" 
+                   alt="Alex Morgan - Master Barber at Nova Cuts" 
+                   loading="lazy">
+              <div class="barber-social-overlay">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="barber-social-link" aria-label="Alex Morgan on Instagram">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>@alexcuts.atx</span>
+                </a>
+              </div>
+            </div>
+            <div class="barber-details">
+              <span class="barber-role">Master Barber</span>
+              <h3 class="barber-name">Alex Morgan</h3>
+              <p class="barber-bio">
+                Over 12 years of mastery in classic skin fades, traditional hot-towel straight razor shaves, and heritage pompadour sculpting.
+              </p>
+              <div class="barber-specialties">
+                <span class="tag">Classic Fades</span>
+                <span class="tag">Hot Towel Shave</span>
+                <span class="tag">Pompadours</span>
+              </div>
+              <button class="btn btn-sm btn-outline-gold select-barber-btn" data-barber="Alex Morgan">
+                Select Alex
+              </button>
+            </div>
+          </article>
+
+          <!-- Barber 2 -->
+          <article class="barber-card reveal-on-scroll">
+            <div class="barber-image-container">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                   alt="Daniel Carter - Senior Barber at Nova Cuts" 
+                   loading="lazy">
+              <div class="barber-social-overlay">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="barber-social-link" aria-label="Daniel Carter on Instagram">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>@danielcarter.cuts</span>
+                </a>
+              </div>
+            </div>
+            <div class="barber-details">
+              <span class="barber-role">Senior Barber</span>
+              <h3 class="barber-name">Daniel Carter</h3>
+              <p class="barber-bio">
+                Specializes in architectural beard design, seamless taper fades, and modern textured crops for today’s executive gentlemen.
+              </p>
+              <div class="barber-specialties">
+                <span class="tag">Beard Sculpt</span>
+                <span class="tag">Taper Fade</span>
+                <span class="tag">Textured Crop</span>
+              </div>
+              <button class="btn btn-sm btn-outline-gold select-barber-btn" data-barber="Daniel Carter">
+                Select Daniel
+              </button>
+            </div>
+          </article>
+
+          <!-- Barber 3 -->
+          <article class="barber-card reveal-on-scroll">
+            <div class="barber-image-container">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" 
+                   alt="Marcus Reed - Style Specialist at Nova Cuts" 
+                   loading="lazy">
+              <div class="barber-social-overlay">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="barber-social-link" aria-label="Marcus Reed on Instagram">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>@reed.grooming</span>
+                </a>
+              </div>
+            </div>
+            <div class="barber-details">
+              <span class="barber-role">Style Specialist</span>
+              <h3 class="barber-name">Marcus Reed</h3>
+              <p class="barber-bio">
+                Expert in customized hair consulting, scissor flow, line razor precision, and revitalizing scalp conditioning treatments.
+              </p>
+              <div class="barber-specialties">
+                <span class="tag">Scissor Flow</span>
+                <span class="tag">Precision Edging</span>
+                <span class="tag">Scalp Care</span>
+              </div>
+              <button class="btn btn-sm btn-outline-gold select-barber-btn" data-barber="Marcus Reed">
+                Select Marcus
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <p class="section-kicker">Visual Craft</p>
+          <h2 class="section-title">The Gallery</h2>
+          <div class="title-accent-line"></div>
+          <p class="section-subtitle">
+            An intimate look into our shop floor, precision scissor cuts, sculpted beard profiles, and timeless transformations.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="gallery-filters reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">All Works</button>
+          <button class="filter-btn" data-filter="haircuts">Haircuts</button>
+          <button class="filter-btn" data-filter="beards">Beard Styling</button>
+          <button class="filter-btn" data-filter="lounge">Shop &amp; Tools</button>
+        </div>
+
+        <!-- Responsive Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Item 1: Haircuts -->
+          <div class="gallery-item reveal-on-scroll" data-category="haircuts">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" 
+                   alt="Precision skin fade haircut" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Haircuts</span>
+                <h4 class="gallery-item-title">Seamless Low Skin Fade</h4>
+                <p class="gallery-item-desc">Clean taper blend with styled matte pomade top</p>
+                <button class="gallery-view-btn" aria-label="View larger image">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Beards -->
+          <div class="gallery-item reveal-on-scroll" data-category="beards">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80" 
+                   alt="Architectural beard shaping with straight razor" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Beard Styling</span>
+                <h4 class="gallery-item-title">Razor-Sharp Beard Sculpt</h4>
+                <p class="gallery-item-desc">Defined cheek perimeter and organic beard balm finish</p>
+                <button class="gallery-view-btn" aria-label="View larger image">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Barber Working -->
+          <div class="gallery-item reveal-on-scroll" data-category="haircuts">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1593702295094-aea22597af65?auto=format&fit=crop&w=800&q=80" 
+                   alt="Barber working with client on precision scissors" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Craft in Action</span>
+                <h4 class="gallery-item-title">Shear Precision In Action</h4>
+                <p class="gallery-item-desc">Scissor over comb texturing for natural flow</p>
+                <button class="gallery-view-btn" aria-label="View larger image">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Lounge Interior -->
+          <div class="gallery-item reveal-on-scroll" data-category="lounge">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=800&q=80" 
+                   alt="Nova cuts luxury leather chairs and interior" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">The Lounge</span>
+                <h4 class="gallery-item-title">Leather Chairs &amp; Atmosphere</h4>
+                <p class="gallery-item-desc">A relaxed gentleman’s retreat with complimentary drinks</p>
+                <button class="gallery-view-btn" aria-label="View larger image">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Grooming Tools -->
+          <div class="gallery-item reveal-on-scroll" data-category="lounge">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" 
+                   alt="Master grooming tools and straight razor station" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Grooming Tools</span>
+                <h4 class="gallery-item-title">Artisan Tools of the Trade</h4>
+                <p class="gallery-item-desc">Hand-honed straight razors and Japanese steel shears</p>
+                <button class="gallery-view-btn" aria-label="View larger image">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Client Transformations -->
+          <div class="gallery-item reveal-on-scroll" data-category="haircuts">
+            <div class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80" 
+                   alt="Client transformation textured crop haircut" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Transformations</span>
+                <h4 class="gallery-item-title">Executive Textured Crop</h4>
+                <p class="gallery-item-desc">Sharp perimeter, natural movement, and matte clay finish</p>
+                <button class="gallery-view-btn" aria-label="View larger image">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <p class="section-kicker">Client Endorsements</p>
+          <h2 class="section-title">What Our Clients Say</h2>
+          <div class="title-accent-line"></div>
+          <p class="section-subtitle">
+            Reputation built on consistency, precision, and an unmatched customer experience.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card reveal-on-scroll">
+            <div class="testimonial-quote-icon">“</div>
+            <div class="star-rating" aria-label="5 stars out of 5">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-text">
+              "Best haircut I've had in years. The attention to detail is incredible. Alex took the time to understand my hair's cowlicks and gave me the cleanest fade I've ever had."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JV</div>
+              <div class="author-info">
+                <h4 class="author-name">Julian Vance</h4>
+                <span class="author-tag">Tech Executive • Austin, TX</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card featured-testimonial reveal-on-scroll">
+            <div class="testimonial-quote-icon">“</div>
+            <div class="star-rating" aria-label="5 stars out of 5">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-text">
+              "Great atmosphere, professional barbers and an amazing finish every time. The hot towel treatment and straight-razor neck shave make every visit feel like a luxury escape."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LH</div>
+              <div class="author-info">
+                <h4 class="author-name">Liam Henderson</h4>
+                <span class="author-tag">Architect • Regular Client</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card reveal-on-scroll">
+            <div class="testimonial-quote-icon">“</div>
+            <div class="star-rating" aria-label="5 stars out of 5">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-text">
+              "Finally found a barber who understands exactly what style I want. Daniel’s beard sculpting alone is worth triple the price. Nova Cuts sets the standard for barbershops."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">DR</div>
+              <div class="author-info">
+                <h4 class="author-name">David Reynolds</h4>
+                <span class="author-tag">Creative Director • Austin, TX</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== APPOINTMENT / BOOKING SECTION ==================== -->
+    <section class="section booking-section" id="booking">
+      <div class="container">
+        <div class="booking-wrapper reveal-on-scroll">
+          <!-- Left Visual Column -->
+          <div class="booking-sidebar">
+            <div class="sidebar-content">
+              <p class="section-kicker">Reserve Your Chair</p>
+              <h2 class="sidebar-title">Ready for a Fresh Look?</h2>
+              <p class="sidebar-quote">
+                "Reserve your chair and experience the Nova Cuts difference."
+              </p>
+              
+              <div class="booking-perks">
+                <div class="perk-item">
+                  <div class="perk-icon">✓</div>
+                  <div class="perk-text">
+                    <strong>Zero Waiting Time</strong>
+                    <p>Appointments are prioritized to honor your busy calendar.</p>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-icon">✓</div>
+                  <div class="perk-text">
+                    <strong>Complimentary Beverage</strong>
+                    <p>Artisan espresso, craft sparkling water, or single malt.</p>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-icon">✓</div>
+                  <div class="perk-text">
+                    <strong>Hot Lather Finishing</strong>
+                    <p>Included with every haircut and beard appointment.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sidebar-hours-callout">
+                <span class="callout-icon">🕒</span>
+                <div>
+                  <strong>Shop Hours</strong>
+                  <p>Mon–Sat: 9AM–8PM | Sun: 10AM–5PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Booking Form Column -->
+          <div class="booking-form-card">
+            <h3 class="form-title">Book An Appointment</h3>
+            <p class="form-subtitle">Fill out the details below. We will send an instant confirmation.</p>
+
+            <form id="appointmentForm" class="appointment-form" novalidate>
+              <div class="form-grid">
+                <!-- Name Field -->
+                <div class="form-group">
+                  <label for="fullName">Full Name <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Alexander Sterling" required autocomplete="name">
+                    <span class="input-icon">👤</span>
+                  </div>
+                  <small class="error-msg" id="nameError">Please enter your full name.</small>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="emailAddress">Email Address <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="alexander@domain.com" required autocomplete="email">
+                    <span class="input-icon">✉️</span>
+                  </div>
+                  <small class="error-msg" id="emailError">Please enter a valid email address.</small>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="form-group">
+                  <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                    <span class="input-icon">📞</span>
+                  </div>
+                  <small class="error-msg" id="phoneError">Please enter a valid phone number (10+ digits).</small>
+                </div>
+
+                <!-- Service Selection -->
+                <div class="form-group">
+                  <label for="selectService">Select Service <span class="required">*</span></label>
+                  <div class="input-with-icon select-wrapper">
+                    <select id="selectService" name="selectService" required>
+                      <option value="" disabled selected>Choose your service...</option>
+                      <option value="Classic Haircut">Classic Haircut — $25 (30 min)</option>
+                      <option value="Premium Haircut">Premium Haircut — $35 (45 min)</option>
+                      <option value="Beard Trim">Beard Trim — $20 (25 min)</option>
+                      <option value="Haircut + Beard">Haircut + Beard — $50 (55 min)</option>
+                      <option value="Executive Grooming">Executive Grooming — $65 (75 min)</option>
+                      <option value="Kids Haircut">Kids Haircut — $20 (30 min)</option>
+                    </select>
+                    <span class="input-icon select-arrow">▼</span>
+                  </div>
+                  <small class="error-msg" id="serviceError">Please select a service.</small>
+                </div>
+
+                <!-- Preferred Barber Selection -->
+                <div class="form-group">
+                  <label for="selectBarber">Preferred Barber</label>
+                  <div class="input-with-icon select-wrapper">
+                    <select id="selectBarber" name="selectBarber">
+                      <option value="First Available Barber" selected>Any Available Barber (Quickest)</option>
+                      <option value="Alex Morgan">Alex Morgan — Master Barber</option>
+                      <option value="Daniel Carter">Daniel Carter — Senior Barber</option>
+                      <option value="Marcus Reed">Marcus Reed — Style Specialist</option>
+                    </select>
+                    <span class="input-icon select-arrow">▼</span>
+                  </div>
+                </div>
+
+                <!-- Preferred Date -->
+                <div class="form-group">
+                  <label for="bookingDate">Preferred Date <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <input type="date" id="bookingDate" name="bookingDate" required>
+                    <span class="input-icon">📅</span>
+                  </div>
+                  <small class="error-msg" id="dateError">Please select a future date.</small>
+                </div>
+
+                <!-- Preferred Time -->
+                <div class="form-group">
+                  <label for="bookingTime">Preferred Time <span class="required">*</span></label>
+                  <div class="input-with-icon select-wrapper">
+                    <select id="bookingTime" name="bookingTime" required>
+                      <option value="" disabled selected>Select a time slot...</option>
+                      <option value="09:00 AM">09:00 AM (Morning)</option>
+                      <option value="10:00 AM">10:00 AM (Morning)</option>
+                      <option value="11:30 AM">11:30 AM (Late Morning)</option>
+                      <option value="01:00 PM">01:00 PM (Afternoon)</option>
+                      <option value="02:30 PM">02:30 PM (Afternoon)</option>
+                      <option value="04:00 PM">04:00 PM (Afternoon)</option>
+                      <option value="05:30 PM">05:30 PM (Evening)</option>
+                      <option value="07:00 PM">07:00 PM (Evening)</option>
+                    </select>
+                    <span class="input-icon select-arrow">▼</span>
+                  </div>
+                  <small class="error-msg" id="timeError">Please select a time slot.</small>
+                </div>
+              </div>
+
+              <!-- Special Request Notes -->
+              <div class="form-group">
+                <label for="specialNotes">Special Requests or Style Notes (Optional)</label>
+                <textarea id="specialNotes" name="specialNotes" rows="3" placeholder="Tell us about your hair style, preferred beverage, or specific barber requests..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-gold btn-block form-submit-btn" id="submitBookingBtn">
+                <span class="btn-text">BOOK MY APPOINTMENT</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <!-- Success Confirmation Box (Hidden initially, shown by JS on valid submit) -->
+            <div class="booking-success-box" id="bookingSuccessBox" style="display: none;">
+              <div class="success-icon-ring">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="success-title">Appointment Confirmed!</h3>
+              <p class="success-desc">
+                Thank you, <strong id="successClientName">Guest</strong>. We've reserved your chair at Nova Cuts.
+              </p>
+              
+              <div class="confirmation-ticket">
+                <div class="ticket-row">
+                  <span class="ticket-label">Service:</span>
+                  <span class="ticket-val" id="successService">Classic Haircut</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="ticket-label">Barber:</span>
+                  <span class="ticket-val" id="successBarber">Alex Morgan</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="ticket-label">Date &amp; Time:</span>
+                  <span class="ticket-val" id="successDateTime">Oct 12, 2026 at 11:30 AM</span>
+                </div>
+                <div class="ticket-row">
+                  <span class="ticket-label">Reference ID:</span>
+                  <span class="ticket-val gold-text" id="successRefCode">#NC-8492</span>
+                </div>
+              </div>
+
+              <div class="success-actions">
+                <button type="button" class="btn btn-outline-gold" id="resetBookingBtn">Book Another Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT & MAP SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <p class="section-kicker">Find Our Lounge</p>
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="title-accent-line"></div>
+          <p class="section-subtitle">
+            Located in downtown Austin. Walk-ins welcome based on availability, reservations recommended.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Information Cards -->
+          <div class="contact-info-col reveal-on-scroll">
+            <!-- Brand Location Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <h3 class="contact-card-title">NOVA CUTS</h3>
+                <p class="contact-card-text">123 Main Street<br>Austin, Texas 78701</p>
+              </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <h3 class="contact-card-title">Phone</h3>
+                <p class="contact-card-text">
+                  <a href="tel:+15551234567" class="hover-gold">+1 (555) 123-4567</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <h3 class="contact-card-title">Email</h3>
+                <p class="contact-card-text">
+                  <a href="mailto:hello@novacuts.com" class="hover-gold">hello@novacuts.com</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Opening Hours Card -->
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <h3 class="contact-card-title">Opening Hours</h3>
+                <p class="contact-card-text">
+                  <strong>Monday – Saturday:</strong> 9:00 AM – 8:00 PM<br>
+                  <strong>Sunday:</strong> 10:00 AM – 5:00 PM
+                </p>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-channels-bar">
+              <span class="social-label">Follow Us:</span>
+              <div class="social-icon-links">
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Nova Cuts on Instagram">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span class="social-name">Instagram</span>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Nova Cuts on Facebook">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                  <span class="social-name">Facebook</span>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="Nova Cuts on TikTok">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.42a6.34 6.34 0 0 0-1-.08 6.34 6.34 0 1 0 6.34 6.34V8.41a8.3 8.3 0 0 0 4.91 1.6V6.75a4.85 4.85 0 0 1-1-.06z"/>
+                  </svg>
+                  <span class="social-name">TikTok</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stylized Google Map Frame -->
+          <div class="contact-map-col reveal-on-scroll">
+            <div class="map-container">
+              <iframe 
+                title="Nova Cuts Austin Texas Location Map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.74637257088!2d-97.7986835!3d30.267153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b50875e5da7f%3A0xb214742a17056461!2sDowntown%20Austin%2C%20Austin%2C%20TX!5e0!3m2!1sen!2sus!4v1695000000000!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="map-overlay-badge">
+                <span class="pin-pulse"></span>
+                <span>Nova Cuts • 123 Main St, Austin TX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Brand Col -->
+        <div class="footer-col footer-brand-col">
+          <a href="#home" class="brand-logo footer-logo">
+            <span class="logo-mark">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+              </svg>
+            </span>
+            <span class="logo-text">NOVA <span>CUTS</span></span>
+          </a>
+          <p class="footer-tagline">Sharp Cuts. Clean Style.</p>
+          <p class="footer-desc">
+            A premium modern sanctuary dedicated to master craftsmanship, classic straight razor artistry, and contemporary gentleman styling.
+          </p>
+        </div>
+
+        <!-- Quick Links Col -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#barbers">Barbers</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Quick Link Col -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Classic Haircut ($25)</a></li>
+            <li><a href="#services">Premium Haircut ($35)</a></li>
+            <li><a href="#services">Beard Trim ($20)</a></li>
+            <li><a href="#services">Haircut + Beard ($50)</a></li>
+            <li><a href="#services">Executive Grooming ($65)</a></li>
+            <li><a href="#services">Kids Haircut ($20)</a></li>
+          </ul>
+        </div>
+
+        <!-- Lounge Hours Col -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Lounge Hours</h4>
+          <div class="footer-hours-box">
+            <div class="hours-row">
+              <span>Monday – Saturday</span>
+              <span class="hours-time">9:00 AM – 8:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span>Sunday</span>
+              <span class="hours-time">10:00 AM – 5:00 PM</span>
+            </div>
+          </div>
+          <div class="footer-cta-box">
+            <a href="#booking" class="btn btn-sm btn-gold btn-block">Book An Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Nova Cuts. All rights reserved.</p>
+        <p class="footer-disclaimer">Designed for gentlemen of distinction.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== GALLERY LIGHTBOX MODAL ==================== -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">
+      <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle"></h4>
+        <p id="lightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BACK TO TOP BUTTON ==================== -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

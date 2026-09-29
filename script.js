@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingTimeInput = document.getElementById('bookingTime');
   const submitBookingBtn = document.getElementById('submitBookingBtn');
 
+  // Guarantee appointment confirmation is completely hidden on initial page load
+  if (bookingSuccessBox) {
+    bookingSuccessBox.style.display = 'none';
+    bookingSuccessBox.classList.remove('is-visible');
+  }
+
   // Service & Barber CTA Triggers
   const bookServiceBtns = document.querySelectorAll('.book-service-btn');
   const selectBarberBtns = document.querySelectorAll('.select-barber-btn');
@@ -594,6 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Show confirmation and hide form
       bookingForm.style.display = 'none';
+      bookingSuccessBox.classList.add('is-visible');
       bookingSuccessBox.style.display = 'block';
 
       // Move focus into the confirmation view
@@ -607,6 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // CONFIRMATION CLOSE BUTTON
   resetBookingBtn.addEventListener('click', () => {
     // Hide confirmation and show form
+    bookingSuccessBox.classList.remove('is-visible');
     bookingSuccessBox.style.display = 'none';
     bookingForm.style.display = 'block';
 

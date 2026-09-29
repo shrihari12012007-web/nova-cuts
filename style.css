@@ -1693,11 +1693,16 @@ button {
   to { transform: rotate(360deg); }
 }
 
-/* Booking Success Confirmation Box */
+/* Booking Success Confirmation Box - Hidden by default on initial page load */
 .booking-success-box {
+  display: none;
   text-align: center;
   padding: 20px 0;
   animation: fadeIn 0.4s ease-out;
+}
+
+.booking-success-box.is-visible {
+  display: block;
 }
 
 .success-icon-ring {
@@ -2672,3 +2677,14 @@ button {
   justify-content: center;
   margin-bottom: 16px;
 }
+
+.stats-demo-notice {
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: center;
+  opacity: 0.85;
+}
+

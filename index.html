@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2.2">
+  <link rel="stylesheet" href="style.css?v=2.3">
 </head>
 <body>
 
@@ -102,14 +102,28 @@
 
   <main>
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero-section" id="home">
-      <div class="hero-bg-media">
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" 
-             alt="Modern luxury barbershop interior with dark leather barber chairs and ambient lighting" 
-             class="hero-bg-img"
-             fetchpriority="high">
-        <div class="hero-overlay"></div>
-      </div>
+    <section class="hero hero-section" id="home">
+      <!-- Fallback Background Image (Displays if video is loading, blocked, or reduced motion enabled) -->
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" 
+           alt="Modern luxury barbershop interior with dark leather barber chairs and ambient lighting" 
+           class="hero-fallback-img"
+           fetchpriority="high">
+
+      <!-- Hero Video Background -->
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src="assets/nova-cuts-hero.mp4" type="video/mp4">
+      </video>
+
+      <!-- Dark Cinematic Overlay -->
+      <div class="hero-overlay"></div>
 
       <div class="container hero-content">
         <div class="hero-badge">
@@ -1313,6 +1327,6 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="script.js?v=2.2"></script>
+  <script src="script.js?v=2.3"></script>
 </body>
 </html>

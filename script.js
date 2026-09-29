@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
     bookingSuccessBox.classList.remove('is-visible');
   }
 
+  // Ensure hero video autoplays smoothly across browsers
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playPromise = heroVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay policy prevented playback; fallback image remains active
+      });
+    }
+  }
+
   // Service & Barber CTA Triggers
   const bookServiceBtns = document.querySelectorAll('.book-service-btn');
   const selectBarberBtns = document.querySelectorAll('.select-barber-btn');

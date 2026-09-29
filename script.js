@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 6. ANIMATED STATISTICS COUNTER
+  // 6. ANIMATED STATISTICS COUNTER (CLEAN PORTFOLIO METRICS)
   // =========================================================================
   let counterStarted = false;
   const startCounters = () => {
@@ -180,11 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = +counter.getAttribute('data-target');
       if (isNaN(target)) return;
 
-      const duration = 2000;
-      const stepTime = 30;
-      const steps = duration / stepTime;
-      const increment = target / steps;
       let current = 0;
+      const stepTime = 120;
+      const steps = 15;
+      const increment = Math.max(1, target / steps);
 
       const timer = setInterval(() => {
         current += increment;
@@ -192,11 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
           current = target;
           clearInterval(timer);
         }
-        if (target >= 1000) {
-          counter.textContent = `${Math.floor(current / 1000)}K+`;
-        } else {
-          counter.textContent = `${Math.floor(current)}+`;
-        }
+        counter.textContent = Math.round(current);
       }, stepTime);
     });
   };
@@ -299,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectServiceInput.dispatchEvent(new Event('change'));
       }
       scrollToBooking();
-      // Subtle pulse to highlight the form
+      // Highlight the booking card
       const formCard = document.querySelector('.booking-form-card');
       formCard.style.outline = '2px solid var(--gold-primary)';
       setTimeout(() => { formCard.style.outline = 'none'; }, 1500);
@@ -321,18 +316,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Set min date to today so past dates cannot be booked
+  // Dynamically set minimum date to today so past dates cannot be chosen
   if (bookingDateInput) {
     const today = new Date().toISOString().split('T')[0];
     bookingDateInput.min = today;
-    // Set a sensible default of tomorrow
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    bookingDateInput.value = tomorrow.toISOString().split('T')[0];
+    // Set default date to today
+    bookingDateInput.value = today;
   }
 
   // =========================================================================
-  // 9. FORM VALIDATION & APPOINTMENT CONFIRMATION
+  // 9. FORM VALIDATION & DYNAMIC DEMO APPOINTMENT CONFIRMATION
   // =========================================================================
   const nameInput = document.getElementById('fullName');
   const emailInput = document.getElementById('emailAddress');
@@ -387,7 +380,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const validateDate = () => {
     const parent = bookingDateInput.closest('.form-group');
-    if (!bookingDateInput.value) {
+    const val = bookingDateInput.value;
+    if (!val) {
+      parent.classList.add('has-error');
+      return false;
+    }
+    const todayStr = new Date().toISOString().split('T')[0];
+    if (val < todayStr) {
       parent.classList.add('has-error');
       return false;
     }
@@ -442,19 +441,19 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBookingBtn.classList.add('loading');
     submitBookingBtn.disabled = true;
 
-    // Simulate luxury appointment confirmation delay (650ms)
+    // Simulate realistic front-end demo processing delay
     setTimeout(() => {
       submitBookingBtn.classList.remove('loading');
       submitBookingBtn.disabled = false;
 
-      // Extract details for confirmation receipt
+      // Extract exact user-entered details dynamically
       const clientName = nameInput.value.trim();
       const serviceChosen = selectServiceInput.value;
-      const barberChosen = selectBarberInput.value;
+      const barberChosen = selectBarberInput.value || 'First Available Barber';
       const rawDate = bookingDateInput.value;
       const timeChosen = timeInput.value;
 
-      // Format date nicely (e.g., Saturday, Oct 12, 2026)
+      // Format date dynamically based on user selection
       let formattedDate = rawDate;
       try {
         const parts = rawDate.split('-');
@@ -469,39 +468,74 @@ document.addEventListener('DOMContentLoaded', () => {
         formattedDate = rawDate;
       }
 
-      // Generate random reference code e.g. #NC-8742
-      const randomCode = `#NC-${Math.floor(1000 + Math.random() * 9000)}`;
+      // Generate random demo reference code
+      const randomCode = `#NC-DEMO-${Math.floor(1000 + Math.random() * 9000)}`;
 
-      // Populate Success View
-      document.getElementById('successClientName').textContent = clientName;
-      document.getElementById('successService').textContent = serviceChosen;
-      document.getElementById('successBarber').textContent = barberChosen;
-      document.getElementById('successDateTime').textContent = `${formattedDate} at ${timeChosen}`;
-      document.getElementById('successRefCode').textContent = randomCode;
+      // Populate confirmation card dynamically with exact entered info
+      const clientNameEl = document.getElementById('successClientName');
+      const clientNameDisplayEl = document.getElementById('successClientNameDisplay');
+      const serviceEl = document.getElementById('successService');
+      const barberEl = document.getElementById('successBarber');
+      const dateEl = document.getElementById('successDate');
+      const timeEl = document.getElementById('successTime');
+      const refCodeEl = document.getElementById('successRefCode');
 
-      // Swap Form with Success View
+      if (clientNameEl) clientNameEl.textContent = clientName;
+      if (clientNameDisplayEl) clientNameDisplayEl.textContent = clientName;
+      if (serviceEl) serviceEl.textContent = serviceChosen;
+      if (barberEl) barberEl.textContent = barberChosen;
+      if (dateEl) dateEl.textContent = formattedDate;
+      if (timeEl) timeEl.textContent = timeChosen;
+      if (refCodeEl) refCodeEl.textContent = randomCode;
+
+      // Clear the form fields after confirmation has recorded the values
+      bookingForm.reset();
+      const todayStr = new Date().toISOString().split('T')[0];
+      bookingDateInput.value = todayStr;
+
+      // Swap Form with Confirmation Card
       bookingForm.style.display = 'none';
       bookingSuccessBox.style.display = 'block';
 
-      // Scroll smoothly to success box
+      // Scroll smoothly to confirmation view
       bookingSuccessBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 650);
   });
 
-  // Reset Booking Form
+  // CLOSE / Reset Confirmation Card
   resetBookingBtn.addEventListener('click', () => {
-    bookingForm.reset();
-    if (bookingDateInput) {
-      const tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      bookingDateInput.value = tomorrow.toISOString().split('T')[0];
-    }
     bookingSuccessBox.style.display = 'none';
     bookingForm.style.display = 'block';
   });
 
   // =========================================================================
-  // 10. SMOOTH SCROLLING FOR IN-PAGE ANCHORS
+  // 10. SOCIAL LINKS — EXACT NEW-TAB BEHAVIOR
+  // =========================================================================
+  const socialLinks = document.querySelectorAll('.social-link-btn, .barber-social-link');
+  socialLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetUrl = this.getAttribute('href');
+      if (targetUrl) {
+        // Step 1: Open a new tab preserving current NOVA CUTS tab
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      }
+    });
+
+    // Keyboard support: Enter or Space
+    link.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const targetUrl = this.getAttribute('href');
+        if (targetUrl) {
+          window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        }
+      }
+    });
+  });
+
+  // =========================================================================
+  // 11. SMOOTH SCROLLING FOR IN-PAGE ANCHORS
   // =========================================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -521,7 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Console Welcome Badge
   console.log(
-    '%c NOVA CUTS %c Sharp Cuts. Clean Style. ',
+    '%c NOVA CUTS %c Sharp Cuts. Clean Style. (Concept Portfolio Demo) ',
     'background: #c5a059; color: #070709; font-weight: bold; padding: 4px 8px; border-radius: 3px;',
     'background: #141419; color: #f5f5f7; padding: 4px 8px; border-radius: 3px;'
   );

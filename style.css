@@ -2350,3 +2350,304 @@ button {
     max-height: 60vh;
   }
 }
+
+/* --------------------------------------------------------------------------
+   19. PORTFOLIO DEMO LABELS, MAP PLACEHOLDER & ACCESSIBILITY STYLES
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 3px;
+}
+
+/* Navigation & Header Demo Badges */
+.nav-demo-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid var(--gold-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.drawer-demo-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 6px;
+}
+
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid var(--gold-border);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.demo-tag-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(197, 160, 89, 0.15);
+  color: var(--gold-light);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gold-border);
+}
+
+.demo-contact-badge-bar {
+  margin-bottom: 4px;
+}
+
+.form-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.demo-booking-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px dashed var(--gold-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  text-align: center;
+}
+
+.footer-demo-callout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.footer-demo-subtext {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+/* Social Link Button Hover, Scale & Accessible Tooltip */
+.social-link-btn {
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.social-link-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 14px var(--gold-glow);
+}
+
+.social-link-btn[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-elevated);
+  color: var(--text-cream);
+  border: 1px solid var(--gold-border);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.social-link-btn[data-tooltip]:hover::before,
+.social-link-btn[data-tooltip]:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Stylized Map Placeholder (Option A) */
+.map-placeholder-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: linear-gradient(135deg, #0e0e13 0%, #15151e 100%);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.map-grid-mesh {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(197, 160, 89, 0.1) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.map-vector-graphic {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.map-top-bar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(13, 13, 17, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.map-badge-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.map-coordinates {
+  font-size: 0.72rem;
+  font-family: monospace;
+  color: var(--text-muted);
+}
+
+.map-beacon-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.beacon-pulse {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(197, 160, 89, 0.25);
+  animation: beaconPulseAnim 2.4s infinite ease-out;
+}
+
+@keyframes beaconPulseAnim {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.beacon-point {
+  position: relative;
+  z-index: 4;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+}
+
+/* Ultra-Small Mobile Devices (320px – 430px) */
+@media (max-width: 430px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-brand {
+    font-size: 2.1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-tagline {
+    font-size: 1.15rem;
+  }
+
+  .hero-badge {
+    font-size: 0.68rem;
+    padding: 6px 12px;
+  }
+
+  .hero-stats-bar {
+    padding: 16px 12px;
+  }
+
+  .service-card {
+    padding: 24px 16px;
+  }
+
+  .booking-form-card {
+    padding: 28px 16px;
+  }
+
+  .confirmation-ticket {
+    padding: 14px;
+  }
+
+  .ticket-row {
+    font-size: 0.85rem;
+  }
+
+  .social-icon-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .social-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .map-placeholder-card {
+    min-height: 340px;
+    padding: 16px;
+  }
+}

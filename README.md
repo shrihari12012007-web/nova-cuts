@@ -1,4 +1,4 @@
-# ðŸ’ˆ NOVA CUTS â€” Sharp Cuts. Clean Style.
+# NOVA CUTS - Sharp Cuts. Clean Style.
 
 <div align="center">
   <a href="https://nova-cuts.onrender.com/">
@@ -18,7 +18,7 @@ A complete, premium, modern barbershop business web platform designed for luxury
 
 ---
 
-## ðŸŒ Live URLs
+## Live URLs
 
 - **Primary Live Site (Render):** [https://nova-cuts.onrender.com/](https://nova-cuts.onrender.com/)
 - **Mirror (GitHub Pages):** [https://shrihari12012007-web.github.io/nova-cuts/](https://shrihari12012007-web.github.io/nova-cuts/)
@@ -26,37 +26,37 @@ A complete, premium, modern barbershop business web platform designed for luxury
 
 ---
 
-## âœ¨ Features
+## Features
 
-- **ðŸ–¤ Luxury Obsidian & Metallic Gold Design:** Ultra-clean, modern aesthetic with smooth micro-interactions.
-- **ðŸ“± Fully Responsive:** Seamlessly adapts to smartphones, tablets, and high-res desktop monitors.
-- **ðŸ“… Interactive Booking Form:** Dynamic client validation and consultation request workflow.
-- **ðŸ–¼ï¸ Service Gallery & Lightbox:** Interactive filtering for hairstyles, beard trims, and styling packages.
-- **âš¡ Zero Overhead:** 100% vanilla stack with instant load times and zero framework bloat.
+- **Modern Obsidian & Gold Design:** Ultra-clean aesthetic with smooth micro-interactions.
+- **Fully Responsive:** Seamlessly adapts to smartphones, tablets, and high-res desktop monitors.
+- **Interactive Booking Form:** Dynamic client validation and consultation request workflow.
+- **Service Gallery & Lightbox:** Interactive filtering for hairstyles, beard trims, and styling packages.
+- **Zero Overhead:** 100% vanilla stack with instant load times and zero framework bloat.
 
 ---
 
-## ðŸ› ï¸ Tech Stack
+## Tech Stack
 
 - **HTML5:** Semantic markup, accessibility compliant
 - **CSS3:** Custom CSS variables, responsive grid/flexbox, keyframe glow animations
 - **JavaScript (ES6+):** Form validation, gallery filtering, lightbox modal, scroll-spy navigation
-- **Deployment:** Render Static Site with continuous integration via ender.yaml
+- **Deployment:** Render Static Site with continuous integration via render.yaml
 
 ---
 
-## ðŸš€ One-Click Deploy to Render
+## One-Click Deploy to Render
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/shrihari12012007-web/nova-cuts)
 
 ### Manual Setup on Render:
 1. Log in to [Render Dashboard](https://dashboard.render.com/).
 2. Click **New +** and select **Static Site**.
-3. Connect your repository: https://github.com/shrihari12012007-web/nova-cuts.
+3. Connect your repository: `https://github.com/shrihari12012007-web/nova-cuts`.
 4. Leave **Build Command** empty.
-5. Set **Publish Directory** to ..
+5. Set **Publish Directory** to `.`.
 6. Click **Create Static Site**.
 
 ---
 
-Â© 2026 NOVA CUTS â€¢ Developed by Shree Hari S B
+Developed by Shree Hari S B

@@ -1,4 +1,4 @@
-# NOVA CUTS - Sharp Cuts. Clean Style.
+# :barber: NOVA CUTS — Sharp Cuts. Clean Style. :sparkles:
 
 <div align="center">
   <a href="https://nova-cuts.onrender.com/">
@@ -18,38 +18,38 @@ A complete, premium, modern barbershop business web platform designed for luxury
 
 ---
 
-## Live URLs
+## :globe_with_meridians: Live URLs
 
-- **Primary Live Site (Render):** [https://nova-cuts.onrender.com/](https://nova-cuts.onrender.com/)
-- **Mirror (GitHub Pages):** [https://shrihari12012007-web.github.io/nova-cuts/](https://shrihari12012007-web.github.io/nova-cuts/)
-- **GitHub Repository:** [https://github.com/shrihari12012007-web/nova-cuts](https://github.com/shrihari12012007-web/nova-cuts)
-
----
-
-## Features
-
-- **Modern Obsidian & Gold Design:** Ultra-clean aesthetic with smooth micro-interactions.
-- **Fully Responsive:** Seamlessly adapts to smartphones, tablets, and high-res desktop monitors.
-- **Interactive Booking Form:** Dynamic client validation and consultation request workflow.
-- **Service Gallery & Lightbox:** Interactive filtering for hairstyles, beard trims, and styling packages.
-- **Zero Overhead:** 100% vanilla stack with instant load times and zero framework bloat.
+- :rocket: **Primary Live Site (Render):** [https://nova-cuts.onrender.com/](https://nova-cuts.onrender.com/)
+- :star: **Mirror (GitHub Pages):** [https://shrihari12012007-web.github.io/nova-cuts/](https://shrihari12012007-web.github.io/nova-cuts/)
+- :octocat: **GitHub Repository:** [https://github.com/shrihari12012007-web/nova-cuts](https://github.com/shrihari12012007-web/nova-cuts)
 
 ---
 
-## Tech Stack
+## :sparkles: Features
 
-- **HTML5:** Semantic markup, accessibility compliant
-- **CSS3:** Custom CSS variables, responsive grid/flexbox, keyframe glow animations
-- **JavaScript (ES6+):** Form validation, gallery filtering, lightbox modal, scroll-spy navigation
-- **Deployment:** Render Static Site with continuous integration via render.yaml
+- :black_circle: **Modern Obsidian & Gold Design:** Ultra-clean aesthetic with smooth micro-interactions.
+- :iphone: **Fully Responsive:** Seamlessly adapts to smartphones, tablets, and high-res desktop monitors.
+- :calendar: **Interactive Booking Form:** Dynamic client validation and consultation request workflow.
+- :camera: **Service Gallery & Lightbox:** Interactive filtering for hairstyles, beard trims, and styling packages.
+- :zap: **Zero Overhead:** 100% vanilla stack with instant load times and zero framework bloat.
 
 ---
 
-## One-Click Deploy to Render
+## :hammer_and_wrench: Tech Stack
+
+- :art: **HTML5:** Semantic markup, accessibility compliant
+- :paintbrush: **CSS3:** Custom CSS variables, responsive grid/flexbox, keyframe glow animations
+- :zap: **JavaScript (ES6+):** Form validation, gallery filtering, lightbox modal, scroll-spy navigation
+- :cloud: **Deployment:** Render Static Site with continuous integration via `render.yaml`
+
+---
+
+## :rocket: One-Click Deploy to Render
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/shrihari12012007-web/nova-cuts)
 
-### Manual Setup on Render:
+### :clipboard: Manual Setup on Render:
 1. Log in to [Render Dashboard](https://dashboard.render.com/).
 2. Click **New +** and select **Static Site**.
 3. Connect your repository: `https://github.com/shrihari12012007-web/nova-cuts`.
@@ -59,4 +59,4 @@ A complete, premium, modern barbershop business web platform designed for luxury
 
 ---
 
-Developed by Shree Hari S B
+:star: Developed by Shree Hari S B
